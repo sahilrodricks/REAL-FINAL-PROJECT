@@ -1,26 +1,199 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="anV-Kd-Ggi">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--LbToKgViewController-->
+        <scene sceneID="v76-RP-oOj">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LbToKgViewController" title="LbToKgViewController" id="7DN-eg-uOK" customClass="LbToKgViewController" customModule="MealPrep" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="PAt-l9-JKU"/>
+                        <viewControllerLayoutGuide type="bottom" id="vJj-YY-UD5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="dvr-87-XTm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight in Lb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isf-iE-72e">
+                                <rect key="frame" x="62" y="28" width="251" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="cuU-q4-LXe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Weight In Lbs." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="teX-cz-JCX">
+                                <rect key="frame" x="100" y="89" width="173" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UuU-Ah-sop">
+                                <rect key="frame" x="63" y="146" width="250" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="convertToKilograms" destination="7DN-eg-uOK" eventType="touchUpInside" id="vHC-bw-fb4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcN-2b-kDv">
+                                <rect key="frame" x="16" y="580" width="144" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Share To Twitter"/>
+                                <connections>
+                                    <action selector="convertToKilograms" destination="7DN-eg-uOK" eventType="touchUpInside" id="Q4b-IX-TVX"/>
+                                    <action selector="tweetOut" destination="7DN-eg-uOK" eventType="touchUpInside" id="k3f-W3-af6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="isf-iE-72e" secondAttribute="trailing" constant="46" id="5Ie-bn-uUg"/>
+                            <constraint firstItem="vJj-YY-UD5" firstAttribute="top" secondItem="AcN-2b-kDv" secondAttribute="bottom" constant="8" id="7w7-ug-jFh"/>
+                            <constraint firstItem="teX-cz-JCX" firstAttribute="top" secondItem="isf-iE-72e" secondAttribute="bottom" constant="23" id="8ws-wg-CTK"/>
+                            <constraint firstItem="UuU-Ah-sop" firstAttribute="top" secondItem="teX-cz-JCX" secondAttribute="bottom" constant="27" id="9Vy-5G-T49"/>
+                            <constraint firstItem="isf-iE-72e" firstAttribute="leading" secondItem="dvr-87-XTm" secondAttribute="leadingMargin" constant="46" id="9Yz-nk-mkz"/>
+                            <constraint firstItem="isf-iE-72e" firstAttribute="leading" secondItem="UuU-Ah-sop" secondAttribute="leading" constant="-1" id="NCI-Ba-R5L"/>
+                            <constraint firstItem="AcN-2b-kDv" firstAttribute="top" secondItem="UuU-Ah-sop" secondAttribute="bottom" constant="386" id="Rkd-HS-gGx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="teX-cz-JCX" secondAttribute="trailing" constant="86" id="VMo-Oz-0HM"/>
+                            <constraint firstItem="AcN-2b-kDv" firstAttribute="leading" secondItem="dvr-87-XTm" secondAttribute="leadingMargin" id="ZdM-9L-8dA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AcN-2b-kDv" secondAttribute="trailing" constant="199" id="bjJ-Wb-5Ii"/>
+                            <constraint firstItem="teX-cz-JCX" firstAttribute="width" secondItem="isf-iE-72e" secondAttribute="width" constant="-78" id="mQT-7k-Sn7"/>
+                            <constraint firstItem="UuU-Ah-sop" firstAttribute="width" secondItem="isf-iE-72e" secondAttribute="width" constant="-1" id="vSM-jZ-Bxq"/>
+                            <constraint firstItem="isf-iE-72e" firstAttribute="top" secondItem="PAt-l9-JKU" secondAttribute="bottom" constant="8" id="wEj-v6-tjB"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3ig-p6-f6t" appends="YES" id="bvc-ww-ymP"/>
+                        </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Kg -&gt; Lb" image="dumbbell" id="cHY-Ll-DXH"/>
+                    <connections>
+                        <outlet property="label" destination="isf-iE-72e" id="uZd-Ix-7AK"/>
+                        <outlet property="textField" destination="teX-cz-JCX" id="2X9-7v-adp"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ut-O9-0av" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3ig-p6-f6t">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="7DN-eg-uOK" id="ncZ-Fd-iz4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1368.8" y="-294.60269865067471"/>
+        </scene>
+        <!--KgToLbViewController-->
+        <scene sceneID="3qx-Ha-E8R">
+            <objects>
+                <viewController storyboardIdentifier="KgToLbViewController" title="KgToLbViewController" id="CMb-lV-wl9" customClass="KgToLbViewController" customModule="MealPrep" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OFA-qQ-h53"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jsk-zH-H7w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c9B-CO-g7m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Weigh In Kg." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHL-uf-cQg">
+                                <rect key="frame" x="100" y="87" width="173" height="32"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight In Kg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFv-Hv-2tD">
+                                <rect key="frame" x="62" y="28" width="251" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YX4-eU-mfM">
+                                <rect key="frame" x="63" y="146" width="250" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="convertToLbs" destination="CMb-lV-wl9" eventType="touchUpInside" id="Smu-ms-QKy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0T-rN-61A">
+                                <rect key="frame" x="16" y="580" width="144" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Share To Twitter"/>
+                                <connections>
+                                    <action selector="convertToKilograms" destination="7DN-eg-uOK" eventType="touchUpInside" id="qvO-2G-VRH"/>
+                                    <action selector="tweetOut" destination="CMb-lV-wl9" eventType="touchUpInside" id="DF3-ro-o56"/>
+                                    <action selector="tweetOut" destination="7DN-eg-uOK" eventType="touchUpInside" id="M7c-Nb-jwa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ZHL-uf-cQg" firstAttribute="top" secondItem="PFv-Hv-2tD" secondAttribute="bottom" constant="23" id="3zC-qL-iKv"/>
+                            <constraint firstItem="YX4-eU-mfM" firstAttribute="leading" secondItem="c9B-CO-g7m" secondAttribute="leadingMargin" constant="47" id="4Vr-gz-cVH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a0T-rN-61A" secondAttribute="trailing" constant="199" id="63K-yO-n5a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PFv-Hv-2tD" secondAttribute="trailing" constant="46" id="8VD-g6-fyB"/>
+                            <constraint firstItem="Jsk-zH-H7w" firstAttribute="top" secondItem="YX4-eU-mfM" secondAttribute="bottom" constant="424" id="Lif-In-zkr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YX4-eU-mfM" secondAttribute="trailing" constant="46" id="Mom-3b-UnE"/>
+                            <constraint firstItem="YX4-eU-mfM" firstAttribute="top" secondItem="ZHL-uf-cQg" secondAttribute="bottom" constant="27" id="R8A-jL-um9"/>
+                            <constraint firstItem="PFv-Hv-2tD" firstAttribute="top" secondItem="OFA-qQ-h53" secondAttribute="bottom" constant="8" id="SSH-qQ-7MT"/>
+                            <constraint firstItem="ZHL-uf-cQg" firstAttribute="top" secondItem="PFv-Hv-2tD" secondAttribute="bottom" constant="23" id="bDV-9o-1e2"/>
+                            <constraint firstItem="Jsk-zH-H7w" firstAttribute="top" secondItem="a0T-rN-61A" secondAttribute="bottom" constant="8" id="ebx-fe-fsm"/>
+                            <constraint firstItem="YX4-eU-mfM" firstAttribute="top" secondItem="ZHL-uf-cQg" secondAttribute="bottom" constant="27" id="epQ-c3-yH0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZHL-uf-cQg" secondAttribute="trailing" constant="86" id="fbS-oK-Tbw"/>
+                            <constraint firstItem="a0T-rN-61A" firstAttribute="leading" secondItem="c9B-CO-g7m" secondAttribute="leadingMargin" id="o1E-2o-mFO"/>
+                            <constraint firstItem="ZHL-uf-cQg" firstAttribute="leading" secondItem="c9B-CO-g7m" secondAttribute="leadingMargin" constant="84" id="rpO-Te-9Sv"/>
+                            <constraint firstItem="a0T-rN-61A" firstAttribute="top" secondItem="YX4-eU-mfM" secondAttribute="bottom" constant="386" id="se6-0N-rTb"/>
+                            <constraint firstItem="PFv-Hv-2tD" firstAttribute="leading" secondItem="c9B-CO-g7m" secondAttribute="leadingMargin" constant="46" id="t27-VC-6Qb"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="N9w-qS-OfB" appends="YES" id="uIs-w1-7sk"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Lb -&gt; Kg" image="dumbbell" id="4vv-it-8PY"/>
+                    <connections>
+                        <outlet property="KgField" destination="ZHL-uf-cQg" id="0iP-qH-0sm"/>
+                        <outlet property="LbLabel" destination="PFv-Hv-2tD" id="mXe-du-n8e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZ0-lj-KOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="N9w-qS-OfB">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="CMb-lV-wl9" id="VIq-v8-ofK"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="984.79999999999995" y="488.90554722638683"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="E48-tS-hpP">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="anV-Kd-Ggi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="pok-w9-eVP">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7DN-eg-uOK" kind="relationship" relationship="viewControllers" id="0ty-Mc-Wkv"/>
+                        <segue destination="CMb-lV-wl9" kind="relationship" relationship="viewControllers" id="MUi-1X-bm6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUs-cG-aNa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="429.60000000000002" y="-294.60269865067471"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dumbbell" width="15" height="15"/>
+    </resources>
 </document>

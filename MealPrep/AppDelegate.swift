@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MealPrep
 //
-//  Created by Sahil Rodricks on 4/25/17.
+//  Created by Sahil Rodricks and Leon Miro on 4/25/17.
 //  Copyright © 2017 SHP. All rights reserved.
 //
 
